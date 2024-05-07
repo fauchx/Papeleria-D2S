@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api", (req,res) =>{
-    res.json({"users": ["Playboi Carti", "Demar DeRozan", "Eduardo Daza", "Kawhi Leonard"]})
+    res.json({"users": ["El Pajaro Loco", "LeBron James", "Eduardo Daza", "Cbum"]})
 })
 
 app.post("/login",async (req,res,next) =>{
