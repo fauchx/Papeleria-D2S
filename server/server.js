@@ -5,7 +5,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api", (req,res) =>{
-    res.json({"users": ["El Pajaro Loco", "LeBron James", "Eduardo Daza", "Cbum"]})
+    //res.json({"users": ["El Pajaro Loco", "LeBron James", "Eduardo Daza", "Cbum"]})
+    res.json({"users":[{
+        name:"El pajaro loco",
+        order:"PDF"
+    }, {
+        name:"LeBron James",
+        order:"quiero ganar la nbaaas"
+    }, {
+        name:"Cbum",
+        order:"anda comprame un dianabol"
+    }, {
+        name:"Kendick Lamar",
+        order:"custodia a drake"
+    },] 
+    })
 })
 
 app.post("/login",async (req,res,next) =>{
