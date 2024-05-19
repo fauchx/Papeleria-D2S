@@ -29,7 +29,7 @@ const getUser = async (req,res, next) =>{
 const loginUser = async (req,res,next) =>{
     try {
     const {email,password} = req.body
-    const consult = await pool.query('SELECT name FROM users WHERE email = $1 and password = $2 ', [
+    const consult = await pool.query('SELECT name, id FROM users WHERE email = $1 and password = $2 ', [
         email,
         password
     ])

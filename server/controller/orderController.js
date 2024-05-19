@@ -1,7 +1,7 @@
 const pool = require("../database/db")
 
 const ordersSelect = async (req,res,next) =>{
-    const queryString = "select orders.name, users.name, orders.description, orders.date_order from users inner join orders on orders.user_id = users.id where users.id = $1"
+    const queryString = "select orders.name, orders.id, orders.description, orders.date_order from users inner join orders on orders.user_id = users.id where users.id = $1"
     try {
         const {idUser} = req.params
         const request = await pool.query(queryString, [
