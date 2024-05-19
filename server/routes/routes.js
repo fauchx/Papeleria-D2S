@@ -9,13 +9,19 @@ router.use(bodyParser.urlencoded({ extended: true }));
 const {   getUser,
     loginUser,
     registerUser   } = require('../controller/controller.js')
-
+const {
+    ordersSelect,
+    orderCreate  
+}  = require("../controller/orderController.js")
 //RUTAS
 router.post('/register', registerUser)
-
 
 router.get("/users", getUser )
 
 router.post("/login", loginUser);
+
+router.get("/orders/:idUser", ordersSelect)
+
+router.post("/orders/create", orderCreate)
 
 module.exports = router
